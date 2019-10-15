@@ -4,17 +4,27 @@ using UnityEngine;
 using PDollarGestureRecognizer;
 using System.IO;
 
+
 public class GameScript : CameraScript
 {
 
-    public GameObject enemy;
-    private Enemy enemyScript;
+    public GameObject enemyGObject;
+    private Enemy enemy;
 
     override protected void Start()
     {
         // Tutaj bedziemy mieli rozszerzona funkcjonalnosc o inicjalizowanie przeciwnika itp. 
         base.Start();
-        enemyScript = enemy.GetComponent<Enemy>();
+        
+        enemy = enemyGObject.GetComponent<Enemy>();
+
+    }
+
+    protected void OnRecognition()
+    {
+        float gestureScore = checkPattern();
+        // Bijemy potwora
+        if (gestureScore >= 0.5) enemy.TakeDamage(gestureScore * 30);
     }
 
     override protected void Update()
@@ -53,7 +63,7 @@ public class GameScript : CameraScript
             {
                 // Sprawdzamy czy w tablicy jest wiecej niz 1 punkt - ten lib rzuca exception jak mu sie jednoelementową lub pusta tablice daje
                 if (points.Count > 1)
-                    checkPattern();
+                    OnRecognition();
                 lineClear();
             }
 
@@ -83,15 +93,21 @@ public class GameScript : CameraScript
             if (Input.GetMouseButtonUp(0))
             {
                 if (points.Count > 1)
-                    checkPattern();
+                    OnRecognition();
                 lineClear();
 
             }
         }
 
-
-
     }
 
+   override protected void OnGUI()
+    {
+        base.OnGUI();
+        GUIStyle guiStyle = new GUIStyle();
+        guiStyle.fontSize = 50;
+        guiStyle.normal.textColor = Color.red;
+        GUI.Label(new Rect(50, 150, 400, 100), enemy.Hp.ToString() + " HP", guiStyle);
 
+    }
 }
