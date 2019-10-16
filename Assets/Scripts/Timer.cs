@@ -6,14 +6,16 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public Image timerBar;
-    public float maxTime = 5f;
+    public Enemy enemy;
+    public Player player;
+    private float maxTime;
     private float timeLeft;
 
 
     // Start is called before the first frame update
     void Start()
-    {
-        timerBar = GetComponent<Image>();
+    {       
+        maxTime = enemy.AttackTime;
         timeLeft = maxTime;
     }
 
@@ -29,6 +31,8 @@ public class Timer : MonoBehaviour
         {
             timerBar.fillAmount = 1;
             timeLeft = maxTime;
+
+            player.TakeDamage(Random.Range(enemy.MinDmg, enemy.MaxDmg));
         }
         
     }

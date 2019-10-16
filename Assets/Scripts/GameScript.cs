@@ -100,14 +100,4 @@ public class GameScript : CameraScript
         }
 
     }
-
-   override protected void OnGUI()
-    {
-        base.OnGUI();
-        GUIStyle guiStyle = new GUIStyle();
-        guiStyle.fontSize = 50;
-        guiStyle.normal.textColor = Color.red;
-        GUI.Label(new Rect(50, 150, 400, 100), enemy.Hp.ToString() + " HP", guiStyle);
-
-    }
 }

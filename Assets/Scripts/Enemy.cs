@@ -2,31 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour // klasa wroga w scenie
 {
 
-    public string SceneToLoadOnDeath;
-    public float Hp = 100f; 
-    public string Name; 
+    public string Name;
+    public float Hp;
+    public float AttackTime = 5f;
     public int MinDmg, MaxDmg; //ile obrazen zadaje
+    public string SceneToLoadOnDeath;
+    public Text textRenderer;
+    public Image hpBar;
+
+    private float currentHP;
 
     public bool IsKilled()
     {
-        if (Hp <= 0) return true;
+        if (currentHP <= 0) return true;
         return false;
     }
 
     public void TakeDamage(float damage)
     {
-        Hp -= damage;
+        currentHP -= damage;
+        hpBar.fillAmount = currentHP / Hp;
     }
 
-    /*void Start()
+    void Start()
     {
-       
+        textRenderer.text = Name;
+        currentHP = Hp;
     }
-    */
+    
 
     // Update is called once per frame
     void Update()
