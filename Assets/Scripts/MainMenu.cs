@@ -6,13 +6,12 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public string SceneToLoad;
     public Button playButton;
     public Button quitButton;
 
-    private void LoadNextScene()
+    private void LoadLevelSelect()
     {
-        SceneManager.LoadScene(SceneToLoad);
+        SceneManager.LoadScene("Assets/Scenes/LevelSelect.unity");
     }
 
     private void QuitGame()
@@ -22,7 +21,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        playButton.onClick.AddListener(LoadNextScene);
+        playButton.onClick.AddListener(LoadLevelSelect);
         quitButton.onClick.AddListener(QuitGame);
     }
 
