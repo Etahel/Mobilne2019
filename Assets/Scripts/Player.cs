@@ -37,6 +37,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentHP <= 0) SceneManager.LoadScene("Assets/Scenes/MainMenu.unity");
+        if (currentHP <= 0)
+        {
+            PlayerPrefs.SetString("LastScene", SceneManager.GetActiveScene().path); //do wczytania w you died
+            SceneManager.LoadScene("Assets/Scenes/YouDied.unity");
+        }
     }
 }

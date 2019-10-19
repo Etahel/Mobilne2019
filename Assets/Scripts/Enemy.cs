@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour // klasa wroga w scenie
     public float AttackTime = 5f;
     public int MinDmg, MaxDmg; //ile obrazen zadaje
     public string SceneToLoadOnDeath;
+    public AudioSource hitSound;
     public Text textRenderer;
     public Image hpBar;
 
@@ -27,6 +28,7 @@ public class Enemy : MonoBehaviour // klasa wroga w scenie
     {
         currentHP -= damage;
         hpBar.fillAmount = currentHP / Hp;
+        hitSound.Play();
     }
 
     void Start()

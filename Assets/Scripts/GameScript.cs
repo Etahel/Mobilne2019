@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using PDollarGestureRecognizer;
 using System.IO;
-
+using UnityEngine.UI;
 
 public class GameScript : CameraScript
 {
-
+    public Text SpellAccuracyText;
     public GameObject enemyGObject;
     private Enemy enemy;
 
@@ -15,7 +15,7 @@ public class GameScript : CameraScript
     {
         // Tutaj bedziemy mieli rozszerzona funkcjonalnosc o inicjalizowanie przeciwnika itp. 
         base.Start();
-        
+        SpellAccuracyText.text = "";
         enemy = enemyGObject.GetComponent<Enemy>();
 
     }
@@ -23,8 +23,30 @@ public class GameScript : CameraScript
     protected void OnRecognition()
     {
         float gestureScore = checkPattern();
+        SpellAccuracyText.canvasRenderer.SetAlpha(1.0f);
+
         // Bijemy potwora
-        if (gestureScore >= 0.5) enemy.TakeDamage(gestureScore * 30);
+        if (gestureScore >= 0.5)
+        {
+            if (gestureScore >= 0.9)
+            {
+                SpellAccuracyText.text = "GREAT !";
+            }
+            else
+            {
+                SpellAccuracyText.color = Color.green;
+                SpellAccuracyText.text = "GOOD";
+            }
+            enemy.TakeDamage(gestureScore * 30);
+        }
+        else
+        {
+            SpellAccuracyText.color = new Color32(255, 149, 0, 255);
+            SpellAccuracyText.text = "TRY HARDER";
+        }
+
+        SpellAccuracyText.CrossFadeAlpha(0.0f, 1.0f, false);
+
     }
 
     override protected void Update()
