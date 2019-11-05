@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour // klasa wroga w scenie
     {
         textRenderer.text = Name;
         currentHP = Hp;
+
     }
     
 

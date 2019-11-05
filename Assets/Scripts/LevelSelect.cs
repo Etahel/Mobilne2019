@@ -11,7 +11,7 @@ public class LevelSelect : MonoBehaviour
 
     private void LoadFTIMS()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Assets/Scenes/LevelSelect2.unity");
     }
     void Start()
     {
