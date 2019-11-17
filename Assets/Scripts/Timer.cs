@@ -23,7 +23,7 @@ public class Timer : MonoBehaviour
         timeLeft = maxTime;
         anim = GetComponent<Animator>();
 
-        manager.ChangeGesture();
+       // manager.ChangeGesture();
 
  
     }
@@ -36,8 +36,13 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    
         if(timeLeft > 0) // Zmniejszanie paska
         {
+            if (timeLeft == maxTime)
+            {
+                manager.ChangeGesture();
+            }
             timeLeft -= Time.deltaTime;
             timerBar.fillAmount = timeLeft / maxTime;
         }
@@ -45,7 +50,7 @@ public class Timer : MonoBehaviour
         {
             resetTimer();
 
-            manager.ChangeGesture();
+          
             anim.SetTrigger("Attack");
             player.TakeDamage(Random.Range(enemy.MinDmg, enemy.MaxDmg));
         }

@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     private List<string> gestureClasses;
     private string currentGesture;
 
+    private GameObject displayedGesture;
+
 
 
     // Start is called before the first frame update
@@ -33,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+   
     }
 
     public void AddGestureClass(string gestureClass)
@@ -42,15 +45,18 @@ public class GameManager : MonoBehaviour
 
     private string GetRandomGesture()
     {
-        return gestureClasses[Random.Range(0, gestureClasses.Count)];
+        return gestureClasses[Random.Range(0,gestureClasses.Count-1)];
     }
 
     //ToDo: Rozne sposoby generowania
     public void ChangeGesture()
     {
-        //  currentGesture = GetRandomGesture();
 
-        currentGesture = "pi";
+        if (displayedGesture != null)
+            Destroy(displayedGesture);
+
+        currentGesture = GetRandomGesture();
+        displayedGesture = Instantiate(Resources.Load(currentGesture)) as GameObject;
     }
 
     public void EvaluateGesture(Result result)
