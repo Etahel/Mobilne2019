@@ -50,7 +50,6 @@ public class Timer : MonoBehaviour
         {
             resetTimer();
 
-          
             anim.SetTrigger("Attack");
             player.TakeDamage(Random.Range(enemy.MinDmg, enemy.MaxDmg));
         }

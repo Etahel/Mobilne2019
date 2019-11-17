@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     private string GetRandomGesture()
     {
-        return gestureClasses[Random.Range(0,gestureClasses.Count-1)];
+        return gestureClasses[Random.Range(0,gestureClasses.Count)];
     }
 
     //ToDo: Rozne sposoby generowania
