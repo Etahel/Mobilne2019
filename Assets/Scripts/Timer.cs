@@ -10,7 +10,10 @@ public class Timer : MonoBehaviour
     public Player player;
     private float maxTime;
     private float timeLeft;
-    private Animator anim; 
+    private Animator anim;
+
+    private GameManager manager;
+
 
 
     // Start is called before the first frame update
@@ -19,6 +22,15 @@ public class Timer : MonoBehaviour
         maxTime = enemy.AttackTime;
         timeLeft = maxTime;
         anim = GetComponent<Animator>();
+
+        manager.ChangeGesture();
+
+ 
+    }
+
+    public void setManager(GameManager manager)
+    {
+        this.manager = manager;
     }
 
     // Update is called once per frame
@@ -31,12 +43,18 @@ public class Timer : MonoBehaviour
         }
         else // rob cos gdy uplynal czas
         {
-            timerBar.fillAmount = 1;
-            timeLeft = maxTime;
+            resetTimer();
 
+            manager.ChangeGesture();
             anim.SetTrigger("Attack");
             player.TakeDamage(Random.Range(enemy.MinDmg, enemy.MaxDmg));
         }
         
+    }
+
+    public void resetTimer ()
+    {
+        timerBar.fillAmount = 1;
+        timeLeft = maxTime;
     }
 }

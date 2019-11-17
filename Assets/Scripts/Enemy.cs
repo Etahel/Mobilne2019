@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour // klasa wroga w scenie
 
     private float currentHP;
 
+    private GameManager manager;
+
     public bool IsKilled()
     {
         if (currentHP <= 0) return true;
@@ -36,6 +38,11 @@ public class Enemy : MonoBehaviour // klasa wroga w scenie
         textRenderer.text = Name;
         currentHP = Hp;
 
+    }
+
+    public void setManager(GameManager manager)
+    {
+        this.manager = manager;
     }
     
 

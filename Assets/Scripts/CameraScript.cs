@@ -33,6 +33,8 @@ public abstract class CameraScript : MonoBehaviour
     protected RuntimePlatform platform;
     protected bool android = false;
 
+    protected TextAsset[] gesturesXml;
+
 
 
 
@@ -56,12 +58,12 @@ public abstract class CameraScript : MonoBehaviour
     }
 
     // Dokonuje porownania naszych punktow z zaladowanymi symbolami. Wynik porownania zapisuje w message. 
-    protected float checkPattern()
+    protected Result checkPattern()
     {
         Gesture candidate = new Gesture(points.ToArray());
         Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
         message = gestureResult.GestureClass + " " + gestureResult.Score;
-        return gestureResult.Score;
+        return gestureResult;
     }
 
     // Czysci tablice punktow i linie na ekranie. 

@@ -9,7 +9,9 @@ public class GameScript : CameraScript
 {
     public Text SpellAccuracyText;
     public GameObject enemyGObject;
-    private Enemy enemy;
+
+    protected Enemy enemy;
+    protected GameManager manager;
 
     override protected void Start()
     {
@@ -18,35 +20,20 @@ public class GameScript : CameraScript
         SpellAccuracyText.text = "";
         enemy = enemyGObject.GetComponent<Enemy>();
 
+        foreach (Gesture gesture in trainingSet)
+            manager.AddGestureClass(gesture.Name);
+            
+
+    }
+
+    public void setManager (GameManager manager)
+    {
+        this.manager = manager;
     }
 
     protected void OnRecognition()
     {
-        float gestureScore = checkPattern();
-        SpellAccuracyText.canvasRenderer.SetAlpha(1.0f);
-
-        // Bijemy potwora
-        if (gestureScore >= 0.5)
-        {
-            if (gestureScore >= 0.9)
-            {
-                SpellAccuracyText.text = "GREAT !";
-            }
-            else
-            {
-                SpellAccuracyText.color = Color.green;
-                SpellAccuracyText.text = "GOOD";
-            }
-            enemy.TakeDamage(gestureScore * 30);
-        }
-        else
-        {
-            SpellAccuracyText.color = new Color32(255, 149, 0, 255);
-            SpellAccuracyText.text = "TRY HARDER";
-        }
-
-        SpellAccuracyText.CrossFadeAlpha(0.0f, 1.0f, false);
-
+        manager.EvaluateGesture(checkPattern());
     }
 
     override protected void Update()
