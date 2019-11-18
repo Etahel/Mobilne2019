@@ -20,7 +20,7 @@ public class LevelSelect2 : MonoBehaviour
 
     private void LoadLv1()
     {
-        SceneManager.LoadScene("Assets/Scenes/Game.unity");
+        SceneManager.LoadScene("Assets/Scenes/Tutorial 1.unity");
     }
 }
 
