@@ -82,7 +82,7 @@ public abstract class CameraScript : MonoBehaviour
     {
         // Inicjalizacja wartosci
         platform = Application.platform;
-        drawArea = new Rect(0, Screen.height - 1600, Screen.width, 1600);
+        drawArea = new Rect(0, 0, Screen.width, Screen.height);
         message = "TEST";
 
         // Zaladowanie gesturow 

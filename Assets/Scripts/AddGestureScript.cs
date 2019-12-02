@@ -12,7 +12,13 @@ public class AddGestureScript : CameraScript
 {
     private string newGestureName = "";
 
-   //Nie ma Start() bo inicjalizacja taka sama jak w base klasie. 
+    //Nie ma Start() bo inicjalizacja taka sama jak w base klasie. 
+
+    private void Start()
+    {
+        base.Start();
+        drawArea = new Rect(0, Screen.height - 1600, Screen.width, 1600);
+    }
 
     override protected void Update()
     {
@@ -55,10 +61,28 @@ public class AddGestureScript : CameraScript
 
     override protected void OnGUI()
     {
-        //Tutaj poza wyswietlaniem wiadomosci dodajemy przycisk do rozpoznawania dedykowane i przycisk do dodawania symbolu. 
+        //Tutaj poza wyswietlaniem wiadomosci dodajemy przycisk do rozpoznawania dedykowane i przycisk do dodawania symbolu.
+
+
+        GUI.contentColor = Color.yellow;
+        GUIStyle guiButton = new GUIStyle(GUI.skin.button);
+        guiButton.fontSize = 50;
+        guiButton.normal.textColor = Color.yellow;
+
+        GUI.contentColor = Color.yellow;
+        GUIStyle guiLabel = new GUIStyle();
+        guiLabel.fontSize = 50;
+        guiLabel.normal.textColor = Color.yellow;
+
+        GUI.contentColor = Color.yellow;
+        GUIStyle guiText = new GUIStyle(GUI.skin.textField);
+        guiText.fontSize = 60;
+        guiText.normal.textColor = Color.yellow;
+        //in awake or start use these lines of code to set the size of the font
+
 
         base.OnGUI();
-        if (GUI.Button(new Rect(100, Screen.height - 100, 100, 30), "Recognize"))
+        if (GUI.Button(new Rect(50, Screen.height - 300,400,100), "Recognize", guiButton))
         {
             Gesture candidate = new Gesture(points.ToArray());
             Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
@@ -66,10 +90,11 @@ public class AddGestureScript : CameraScript
             message = gestureResult.GestureClass + " " + gestureResult.Score;
         }
 
-        GUI.Label(new Rect(400, Screen.height - 100, 70, 30), "Add as: ");
-        newGestureName = GUI.TextField(new Rect(500, Screen.height - 100, 100, 30), newGestureName);
+        GUI.Label(new Rect(100, Screen.height - 150,200, 100), "Save as: ", guiLabel);
 
-        if (GUI.Button(new Rect(400, Screen.height - 50, 100, 30), "Add") && points.Count > 0 && newGestureName != "")
+        newGestureName = GUI.TextField(new Rect(350, Screen.height - 150, 600, 75), newGestureName, guiText);
+
+        if (GUI.Button(new Rect(600, Screen.height - 300, 400, 100), "Save", guiButton) && points.Count > 0 && newGestureName != "")
         {
 
             string fileName = String.Format("{0}/{1}-{2}.xml", Application.persistentDataPath, newGestureName, DateTime.Now.ToFileTime());

@@ -21,7 +21,7 @@ public class Tutorial4 : MonoBehaviour
     {
        if (android)
         {
-            if (Input.touchCount > 0)
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 SceneManager.LoadScene("Assets/Scenes/Game.unity");
             }
