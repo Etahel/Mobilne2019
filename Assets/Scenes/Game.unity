@@ -264,12 +264,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c15a4f91532de449f1745027b31d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Number: 1
   Name: Mouse
-  Hp: 1000
+  Hp: 100
   AttackTime: 5
   MinDmg: 5
   MaxDmg: 15
-  SceneToLoadOnDeath: Assets/Scenes/MainMenu.unity
+  SceneToLoadOnDeath: Assets/Scenes/LevelSelect2.unity
   hitSound: {fileID: 224741304}
   textRenderer: {fileID: 22231708}
   hpBar: {fileID: 568739662}

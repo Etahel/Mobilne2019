@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour // klasa wroga w scenie
 {
-
+    public int Number;
     public string Name;
     public float Hp;
     public float AttackTime = 5f;
@@ -51,6 +51,7 @@ public class Enemy : MonoBehaviour // klasa wroga w scenie
     {
         if (IsKilled())
         {
+            PlayerPrefs.SetInt("LevelPassed", Number);
             SceneManager.LoadScene(SceneToLoadOnDeath);
         }
     }

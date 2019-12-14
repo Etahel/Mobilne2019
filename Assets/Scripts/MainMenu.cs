@@ -21,6 +21,12 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        //PlayerPrefs.SetInt("LevelPassed", 0);
+        if (!PlayerPrefs.HasKey("FirstTime"))
+        {
+            PlayerPrefs.SetInt("LevelPassed", 0);
+            PlayerPrefs.SetString("FirstTime", "false");
+        }
         playButton.onClick.AddListener(LoadLevelSelect);
         quitButton.onClick.AddListener(QuitGame);
     }
