@@ -12,6 +12,7 @@ public class LevelSelect2 : MonoBehaviour
     public LevelButton Lv3;
     public LevelButton boss;
     public LevelButton back;
+    public LevelButton reset;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class LevelSelect2 : MonoBehaviour
         Lv3.SetInteractable(false);
         boss.SetInteractable(false);
         back.SetInteractable(true);
+        reset.SetInteractable(true);
         switch (levelPassed)
         {
             case 0:
@@ -48,6 +50,13 @@ public class LevelSelect2 : MonoBehaviour
         Lv3.AddListener(LoadLv3);
         boss.AddListener(LoadBoss);
         back.AddListener(GoBack);
+        reset.AddListener(resetprefs);
+    }
+
+    private void resetprefs()
+    {
+        PlayerPrefs.SetInt("LevelPassed", 0);
+        SceneManager.LoadScene("Assets/Scenes/LevelSelect2.unity");
     }
 
     private void LoadLv1()

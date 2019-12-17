@@ -49,7 +49,17 @@ public class AddGestureScript : CameraScript
             }
 
         // Drugi przycisk myszki czysci ekran. 
-        if (Input.GetMouseButtonDown(1))
+
+
+        if(android)
+        {
+            if (Input.GetTouch(1).phase == TouchPhase.Began)
+            {
+                lineClear();
+            }
+
+        }
+        else if (Input.GetMouseButtonDown(1))
         {
             lineClear();
         }
