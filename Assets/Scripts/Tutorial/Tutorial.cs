@@ -112,6 +112,6 @@ public class Tutorial : MonoBehaviour
 
     private void endTutorial()
     {
-        SceneManager.LoadScene("Assets/Scenes/Game.unity");
+        SceneManager.LoadScene("Assets/Scenes/TutorialGame.unity");
     }
 }
