@@ -41,7 +41,7 @@ public class SpriteButton : MonoBehaviour, IPointerClickHandler,
     {
         SpriteRenderer render = GetComponent<SpriteRenderer>();
         render.color = color;
-        //SceneManager.LoadScene(SceneToLoadOnClick);
+        SceneManager.LoadScene(SceneToLoadOnClick);
     }
     public void OnPointerExit(PointerEventData eventData)
     {

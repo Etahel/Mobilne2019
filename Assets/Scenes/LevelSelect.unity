@@ -909,7 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3235da4a250bdcb44a59ed5ada31eef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoadOnClick: 
+  SceneToLoadOnClick: Assets/Scenes/LevelSelect2.unity
 --- !u!60 &2972906933388701018
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -955,7 +955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7049703872974937980}
   m_Layer: 0
-  m_Name: Reszta
+  m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
