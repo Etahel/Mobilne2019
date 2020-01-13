@@ -41,6 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 790092339
+    locked: 0
+  - name: Enemy
+    uniqueID: 3283406827
+    locked: 0
   - name: UI
     uniqueID: 146538013
+    locked: 0
+  - name: Particles and effects
+    uniqueID: 3200782167
+    locked: 0
+  - name: Foreground
+    uniqueID: 3617218149
     locked: 0
