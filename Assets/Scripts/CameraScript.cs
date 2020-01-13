@@ -86,7 +86,7 @@ public abstract class CameraScript : MonoBehaviour
         platform = Application.platform;
         drawArea = new Rect(0, 0, Screen.width, Screen.height);
         message = "TEST";
-        MenuMusic.Music.gameObject.GetComponent<AudioSource>().Pause();
+        if(MenuMusic.Music != null) MenuMusic.Music.gameObject.GetComponent<AudioSource>().Pause();
         // Zaladowanie gesturow 
         TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>("GestureSet/" + gestureFolder+ "/");
         foreach (TextAsset gestureXml in gesturesXml)
