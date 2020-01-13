@@ -265,11 +265,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Number: 1
-  Name: Mouse
+  Name: Dummy
   Hp: 5
   AttackTime: 5
-  MinDmg: 1
-  MaxDmg: 1
+  MinDmg: 0
+  MaxDmg: 0
+  MinDmgTaken: 1
+  MaxDmgTaken: 1
   SceneToLoadOnDeath: Assets/Scenes/LevelSelect2.unity
   hitSound: {fileID: 224741304}
   textRenderer: {fileID: 22231708}
