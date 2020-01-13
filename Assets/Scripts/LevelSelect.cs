@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class LevelSelect : MonoBehaviour
 {
-
-    public Button FTIMS;
     public LevelButton Back;
 
     private void LoadFTIMS()
@@ -25,7 +23,6 @@ public class LevelSelect : MonoBehaviour
             MenuMusic.Music.gameObject.GetComponent<AudioSource>().Play();
         }
         Back.AddListener(LoadMenu);
-        FTIMS.onClick.AddListener(LoadFTIMS);
     }
 
 

@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
 
     private void LoadTutorial()
     {
-        SceneManager.LoadScene("Assets/Scenes/Tutorial 1.unity");
+        SceneManager.LoadScene("Assets/Scenes/Tutorial.unity");
     }
 
     private void QuitGame()
