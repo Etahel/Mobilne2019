@@ -19,7 +19,6 @@ public class GameScript : CameraScript
         base.Start();
         SpellAccuracyText.text = "";
         enemy = enemyGObject.GetComponent<Enemy>();
-
         foreach (Gesture gesture in trainingSet)
             manager.AddGestureClass(gesture.Name);
             

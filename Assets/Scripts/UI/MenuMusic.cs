@@ -13,10 +13,6 @@ public class MenuMusic : MonoBehaviour
         
     }
 
-    public void Pause()
-    {
-        Music.gameObject.gameObject.GetComponent<AudioSource>().Pause();
-    }
     private void Awake()
     {
         if(music != null && music != this)

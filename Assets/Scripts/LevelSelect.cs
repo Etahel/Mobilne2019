@@ -20,6 +20,10 @@ public class LevelSelect : MonoBehaviour
     }
     void Start()
     {
+        if (!MenuMusic.Music.gameObject.GetComponent<AudioSource>().isPlaying)
+        {
+            MenuMusic.Music.gameObject.GetComponent<AudioSource>().Play();
+        }
         Back.AddListener(LoadMenu);
         FTIMS.onClick.AddListener(LoadFTIMS);
     }

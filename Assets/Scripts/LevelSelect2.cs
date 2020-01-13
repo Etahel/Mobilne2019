@@ -16,6 +16,10 @@ public class LevelSelect2 : MonoBehaviour
 
     void Start()
     {
+        if (!MenuMusic.Music.gameObject.GetComponent<AudioSource>().isPlaying)
+        {
+            MenuMusic.Music.gameObject.GetComponent<AudioSource>().Play();
+        }
         int levelPassed = PlayerPrefs.GetInt("LevelPassed");
         Lv1.SetInteractable(true);
         Lv2.SetInteractable(false);
@@ -61,7 +65,7 @@ public class LevelSelect2 : MonoBehaviour
 
     private void LoadLv1()
     {
-        SceneManager.LoadScene("Assets/Scenes/Tutorial 1.unity");
+        SceneManager.LoadScene("Assets/Scenes/Level1.unity");
     }
 
     private void LoadLv2()
