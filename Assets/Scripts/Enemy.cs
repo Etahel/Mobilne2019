@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour // klasa wroga w scenie
     public AudioSource hitSound;
     public Text textRenderer;
     public Image hpBar;
-
+    private Animator anim;
     private float currentHP;
 
     private GameManager manager;
@@ -28,6 +28,13 @@ public class Enemy : MonoBehaviour // klasa wroga w scenie
 
     public void TakeDamage(float damage)
     {
+        anim.SetTrigger("Defend");
+
+        if (damage > MaxDmg)
+            damage = MaxDmg;
+        if (damage < MinDmg)
+            damage = MinDmg;
+
         currentHP -= damage;
         hpBar.fillAmount = currentHP / Hp;
         hitSound.Play();
@@ -35,6 +42,7 @@ public class Enemy : MonoBehaviour // klasa wroga w scenie
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         textRenderer.text = Name;
         currentHP = Hp;
 
@@ -55,4 +63,5 @@ public class Enemy : MonoBehaviour // klasa wroga w scenie
             SceneManager.LoadScene(SceneToLoadOnDeath);
         }
     }
+
 }

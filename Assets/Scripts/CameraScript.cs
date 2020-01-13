@@ -11,6 +11,8 @@ public abstract class CameraScript : MonoBehaviour
 {
     public Transform gestureOnScreenPrefab;
 
+    public string gestureFolder;
+
     //Lista z zaladowanymi symbolami
     protected List<Gesture> trainingSet = new List<Gesture>();
 
@@ -86,7 +88,7 @@ public abstract class CameraScript : MonoBehaviour
         message = "TEST";
 
         // Zaladowanie gesturow 
-        TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>("GestureSet/Custom/");
+        TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>("GestureSet/" + gestureFolder+ "/");
         foreach (TextAsset gestureXml in gesturesXml)
             trainingSet.Add(GestureIO.ReadGestureFromXML(gestureXml.text));
 
