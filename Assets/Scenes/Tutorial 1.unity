@@ -1152,5 +1152,15 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2648284065615846534, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_Text
+      value: YOUR HP
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648284066404784906, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_Text
+      value: MONSTER HP
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa897a686c0d654282189633a3617ca, type: 3}

@@ -8,10 +8,16 @@ public class MainMenu : MonoBehaviour
 {
     public Button playButton;
     public Button quitButton;
+    public Button tutorialButton;
 
     private void LoadLevelSelect()
     {
         SceneManager.LoadScene("Assets/Scenes/LevelSelect.unity");
+    }
+
+    private void LoadTutorial()
+    {
+        SceneManager.LoadScene("Assets/Scenes/Tutorial 1.unity");
     }
 
     private void QuitGame()
@@ -29,6 +35,7 @@ public class MainMenu : MonoBehaviour
         }
         playButton.onClick.AddListener(LoadLevelSelect);
         quitButton.onClick.AddListener(QuitGame);
+        tutorialButton.onClick.AddListener(LoadTutorial);
     }
 
 }
