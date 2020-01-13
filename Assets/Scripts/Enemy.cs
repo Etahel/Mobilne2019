@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour // klasa wroga w scenie
     public float Hp;
     public float AttackTime = 5f;
     public int MinDmg, MaxDmg; //ile obrazen zadaje
+    public int MinDmgTaken, MaxDmgTaken; // 0 to disable
     public string SceneToLoadOnDeath;
     public AudioSource hitSound;
     public Text textRenderer;
@@ -30,10 +31,12 @@ public class Enemy : MonoBehaviour // klasa wroga w scenie
     {
         anim.SetTrigger("Defend");
 
-        if (damage > MaxDmg)
-            damage = MaxDmg;
-        if (damage < MinDmg)
-            damage = MinDmg;
+        if (damage > MaxDmgTaken && MaxDmgTaken!=0)
+            damage = MaxDmgTaken;
+
+        if (damage < MinDmgTaken && MinDmgTaken!=0)
+            damage = MinDmgTaken;
+
 
         currentHP -= damage;
         hpBar.fillAmount = currentHP / Hp;
