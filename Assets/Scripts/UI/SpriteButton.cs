@@ -3,38 +3,24 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class SpriteButton : MonoBehaviour, IPointerClickHandler,
-                                  IPointerDownHandler, IPointerEnterHandler,
-                                  IPointerUpHandler, IPointerExitHandler
+
+[RequireComponent(typeof(Collider))]
+public class SpriteButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public string SceneToLoadOnClick;
     private Color color;
 
     void Start()
     {
-        //Attach Physics2DRaycaster to the Camera
         Camera.main.gameObject.AddComponent<Physics2DRaycaster>();
-
         addEventSystem();
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-       // Debug.Log("Mouse Clicked!");
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         SpriteRenderer render = GetComponent<SpriteRenderer>();
         color = new Color(render.color.r, render.color.b, render.color.g);
-        render.color = new Color(render.color.r/2, render.color.b/2, render.color.g/2);
-        //render.color = Color.black;
-        Debug.Log("Mouse Down!");
-        
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
+        render.color = new Color(render.color.r/2, render.color.b/2, render.color.g/2);   
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -43,11 +29,7 @@ public class SpriteButton : MonoBehaviour, IPointerClickHandler,
         render.color = color;
         SceneManager.LoadScene(SceneToLoadOnClick);
     }
-    public void OnPointerExit(PointerEventData eventData)
-    {
-    }
 
-    //Add Event System to the Camera
     void addEventSystem()
     {
         GameObject eventSystem = null;
