@@ -266,13 +266,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Number: 1
   Name: Dummy
-  Hp: 5
+  Hp: 3
   AttackTime: 5
   MinDmg: 0
   MaxDmg: 0
   MinDmgTaken: 1
   MaxDmgTaken: 1
-  SceneToLoadOnDeath: Assets/Scenes/LevelSelect2.unity
+  SceneToLoadOnDeath: Assets/Scenes/MainMenu.unity
   hitSound: {fileID: 224741304}
   textRenderer: {fileID: 22231708}
   hpBar: {fileID: 568739662}
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gestureOnScreenPrefab: {fileID: 400000, guid: 971129baafd304455a111daa5207b8a1,
     type: 3}
-  gestureFolder: Level1
+  gestureFolder: Tutorial
   SpellAccuracyText: {fileID: 932087593}
   enemyGObject: {fileID: 224741296}
 --- !u!20 &519420031

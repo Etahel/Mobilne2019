@@ -10,7 +10,6 @@ public class LevelSelect2 : MonoBehaviour
     public LevelButton Lv1;
     public LevelButton Lv2;
     public LevelButton Lv3;
-    public LevelButton boss;
     public LevelButton back;
     public LevelButton reset;
 
@@ -24,7 +23,6 @@ public class LevelSelect2 : MonoBehaviour
         Lv1.SetInteractable(true);
         Lv2.SetInteractable(false);
         Lv3.SetInteractable(false);
-        boss.SetInteractable(false);
         back.SetInteractable(true);
         reset.SetInteractable(true);
         switch (levelPassed)
@@ -41,7 +39,6 @@ public class LevelSelect2 : MonoBehaviour
             default:// >=3
                 Lv2.SetInteractable(true);
                 Lv3.SetInteractable(true);
-                boss.SetInteractable(true);
                 break;
         }
         AddListeners();
@@ -52,7 +49,6 @@ public class LevelSelect2 : MonoBehaviour
         Lv1.AddListener(LoadLv1);
         Lv2.AddListener(LoadLv2);
         Lv3.AddListener(LoadLv3);
-        boss.AddListener(LoadBoss);
         back.AddListener(GoBack);
         reset.AddListener(resetprefs);
     }
@@ -70,18 +66,14 @@ public class LevelSelect2 : MonoBehaviour
 
     private void LoadLv2()
     {
-        SceneManager.LoadScene("Assets/Scenes/Game.unity");
+        SceneManager.LoadScene("Assets/Scenes/Level2.unity");
     }
 
     private void LoadLv3()
     {
-        SceneManager.LoadScene("Assets/Scenes/Game.unity");
+        SceneManager.LoadScene("Assets/Scenes/Level3.unity");
     }
 
-    private void LoadBoss()
-    {
-        SceneManager.LoadScene("Assets/Scenes/Game.unity");
-    }
 
     private void GoBack()
     {
