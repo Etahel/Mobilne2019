@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         game = cameraGObject.GetComponent<GameScript>();
         gestureClasses = new List<string>();
 
-        game.setManager(this);
+        enemy.setManager(this);
         timer.setManager(this);
         game.setManager(this);
     }
@@ -40,7 +40,8 @@ public class GameManager : MonoBehaviour
 
     public void AddGestureClass(string gestureClass)
     {
-        gestureClasses.Add(gestureClass);
+        if (!gestureClasses.Contains(gestureClass))
+          gestureClasses.Add(gestureClass);
     }
 
     private string GetRandomGesture()

@@ -27,6 +27,10 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        if (!MenuMusic.Music.gameObject.GetComponent<AudioSource>().isPlaying)
+        {
+            MenuMusic.Music.gameObject.GetComponent<AudioSource>().Play();
+        }
         //PlayerPrefs.SetInt("LevelPassed", 0);
         if (!PlayerPrefs.HasKey("FirstTime"))
         {

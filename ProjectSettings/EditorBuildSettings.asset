@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelect.unity
     guid: f1b3a58c8a2f771498ed898cdf86bfe1
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Scenes/Level3.unity
     guid: f71f2f38820617e49ae517775a44e5cc
   - enabled: 1
     path: Assets/Scenes/YouDied.unity
@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TutorialGame.unity
     guid: 532e7179d5e7b1e4fa37b1040e829785
   - enabled: 1
-    path: Assets/Scenes/Level4.unity
+    path: Assets/Scenes/Level1.unity
     guid: bfd41e11f023b44499b8d35d5376eb7d
   - enabled: 1
     path: Assets/Scenes/Level2.unity
