@@ -266,10 +266,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Number: 3
   Name: Mouse
-  Hp: 100
+  Hp: 200
   AttackTime: 5
-  MinDmg: 5
-  MaxDmg: 15
+  MinDmg: 15
+  MaxDmg: 30
   MinDmgTaken: 0
   MaxDmgTaken: 0
   SceneToLoadOnDeath: Assets/Scenes/LevelSelect2.unity
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gestureOnScreenPrefab: {fileID: 400000, guid: 971129baafd304455a111daa5207b8a1,
     type: 3}
-  gestureFolder: Level1
+  gestureFolder: Level3
   SpellAccuracyText: {fileID: 932087593}
   enemyGObject: {fileID: 224741296}
 --- !u!20 &519420031

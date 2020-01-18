@@ -380,7 +380,7 @@ MonoBehaviour:
   Number: 1
   Name: USB
   Hp: 100
-  AttackTime: 5
+  AttackTime: 4
   MinDmg: 5
   MaxDmg: 15
   MinDmgTaken: 0

@@ -123,15 +123,17 @@ public abstract class CameraScript : MonoBehaviour
 
     }
 
+
    protected virtual void OnGUI()
     {
         // Wyswietla wiadomosc w rogu ekranu
+
 
         GUI.contentColor = Color.yellow;
         GUIStyle guiStyle = new GUIStyle();
         guiStyle.fontSize = 50;
         guiStyle.normal.textColor = Color.yellow;
-        GUI.Label(new Rect(50, 50, 400, 100), message, guiStyle);
+       // GUI.Label(new Rect(50, 50, 400, 100), message, guiStyle);
     }
 
 }

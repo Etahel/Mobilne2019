@@ -20,7 +20,7 @@ public class Tutorial : MonoBehaviour
     private const string uiLayer = "UI";
     private const string foregroundLayer = "Foreground";
 
-    private const string mess1 = "Witaj dzielny Studencie! Politechnikę zaatakowały potowry i musisz je zatrzymać!";
+    private const string mess1 = "Witaj dzielny Studencie! Politechnikę zaatakowały potwory i musisz je zatrzymać!";
     private const string mess2 = "Rysuj na ekranie wyświetlane symbole. Uważaj - one ciągle sie zmieniają";
     private const string mess3 = "Potwor zaatakuje jesli bedziesz zbyt wolny. Śledź pozostaly czas oraz stany zdrowia na odpowiednich paskach!";
     private const string mess4 = "Gotowy? W takim razie spróbuj swoich sił przeciwko patyczakowi testowemu!";

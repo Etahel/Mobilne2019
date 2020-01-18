@@ -266,10 +266,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Number: 2
   Name: Fraction
-  Hp: 100
-  AttackTime: 6
+  Hp: 150
+  AttackTime: 5
   MinDmg: 5
-  MaxDmg: 15
+  MaxDmg: 25
   MinDmgTaken: 0
   MaxDmgTaken: 0
   SceneToLoadOnDeath: Assets/Scenes/LevelSelect2.unity
