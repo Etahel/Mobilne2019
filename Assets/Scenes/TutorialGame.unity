@@ -209,8 +209,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1011560469
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5c08cd663444a9240b18a7b05fcadfb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c15a4f91532de449f1745027b31d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 1
+  Number: 0
   Name: Dummy
   Hp: 3
   AttackTime: 5
@@ -276,6 +276,9 @@ MonoBehaviour:
   hitSound: {fileID: 224741304}
   textRenderer: {fileID: 22231708}
   hpBar: {fileID: 568739662}
+  winPanel: {fileID: 4986661312632485968, guid: 851b7315e6fa72245981008066bf18dc,
+    type: 3}
+  userHud: {fileID: 1203060234}
 --- !u!114 &224741302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,6 +629,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2648284066418352534}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &1203060234 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 2648284065778000452, guid: daa897a686c0d654282189633a3617ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 2648284066418352534}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &1203060236
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -661,8 +670,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 146538013
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1158,5 +1167,15 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 2648284065778000452, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648284065778000455, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa897a686c0d654282189633a3617ca, type: 3}

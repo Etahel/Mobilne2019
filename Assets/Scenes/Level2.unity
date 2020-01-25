@@ -276,6 +276,9 @@ MonoBehaviour:
   hitSound: {fileID: 224741304}
   textRenderer: {fileID: 22231708}
   hpBar: {fileID: 568739662}
+  winPanel: {fileID: 4986661312632485968, guid: 851b7315e6fa72245981008066bf18dc,
+    type: 3}
+  userHud: {fileID: 2648284066418352535}
 --- !u!114 &224741302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1158,5 +1161,16 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 2648284065778000455, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa897a686c0d654282189633a3617ca, type: 3}
+--- !u!223 &2648284066418352535 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 2648284065778000452, guid: daa897a686c0d654282189633a3617ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 2648284066418352534}
+  m_PrefabAsset: {fileID: 0}

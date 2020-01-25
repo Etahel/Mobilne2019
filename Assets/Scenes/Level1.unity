@@ -389,6 +389,9 @@ MonoBehaviour:
   hitSound: {fileID: 242226615}
   textRenderer: {fileID: 1681239962}
   hpBar: {fileID: 1947125390}
+  winPanel: {fileID: 4986661312632485968, guid: 851b7315e6fa72245981008066bf18dc,
+    type: 3}
+  userHud: {fileID: 360511971}
 --- !u!95 &242226620
 Animator:
   serializedVersion: 3
@@ -593,8 +596,79 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 913944248}
+    - target: {fileID: 2648284065778000452, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648284065778000455, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648284066959188267, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648284066959188267, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648284066959188267, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098111615263313170, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -376
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098111615263313170, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098111615263313170, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098111615263313170, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098111615263313170, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098111615263313170, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098111615263313170, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098111615263313170, guid: daa897a686c0d654282189633a3617ca,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa897a686c0d654282189633a3617ca, type: 3}
+--- !u!223 &360511971 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 2648284065778000452, guid: daa897a686c0d654282189633a3617ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 360511970}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &416650465 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2648284065615846534, guid: daa897a686c0d654282189633a3617ca,

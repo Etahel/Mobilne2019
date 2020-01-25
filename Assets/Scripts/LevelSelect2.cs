@@ -12,6 +12,7 @@ public class LevelSelect2 : MonoBehaviour
     public LevelButton Lv3;
     public LevelButton back;
     public LevelButton reset;
+    public GameObject badgePanel;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class LevelSelect2 : MonoBehaviour
         Lv3.SetInteractable(false);
         back.SetInteractable(true);
         reset.SetInteractable(true);
+        badgePanel.SetActive(false);
         switch (levelPassed)
         {
             case 0:
@@ -39,6 +41,7 @@ public class LevelSelect2 : MonoBehaviour
             default:// >=3
                 Lv2.SetInteractable(true);
                 Lv3.SetInteractable(true);
+                badgePanel.SetActive(true);
                 break;
         }
         AddListeners();

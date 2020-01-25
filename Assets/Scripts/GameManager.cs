@@ -100,4 +100,12 @@ public class GameManager : MonoBehaviour
         game.SpellAccuracyText.CrossFadeAlpha(0.0f, 1.0f, false);
     }
 
+    public void freeze()
+    {
+        this.enemy.enabled = false;
+        this.enemy.GetComponent<Animator>().enabled = false;
+        this.timer.enabled = false;
+        this.game.enabled = false;
+    }
+
 }

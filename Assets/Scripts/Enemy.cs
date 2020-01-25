@@ -16,10 +16,14 @@ public class Enemy : MonoBehaviour // klasa wroga w scenie
     public AudioSource hitSound;
     public Text textRenderer;
     public Image hpBar;
+    public GameObject winPanel;
+    public Canvas userHud; 
+
     private Animator anim;
     private float currentHP;
 
     private GameManager manager;
+
 
     public bool IsKilled()
     {
@@ -62,9 +66,19 @@ public class Enemy : MonoBehaviour // klasa wroga w scenie
     {
         if (IsKilled())
         {
+            manager.freeze();
+   
+            if(Number!=0)
             PlayerPrefs.SetInt("LevelPassed", Number);
-            SceneManager.LoadScene(SceneToLoadOnDeath);
+            GameObject pNewObject = GameObject.Instantiate(winPanel, userHud.transform);
+            pNewObject.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(delegate { this.loadNextScene(); });
+
         }
+    }
+
+    private void loadNextScene ()
+    {
+        SceneManager.LoadScene(SceneToLoadOnDeath);
     }
 
 }
